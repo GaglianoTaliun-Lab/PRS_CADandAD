@@ -8,7 +8,9 @@ Your base data should contain the PRS variants as well as their effect alleles a
  
 2.	**Genomic builds** for the base and target data must match. [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver/) easily converts your data’s build if needed. It is possible that a couple variants cannot be lifted over and are dropped during conversion. Find LiftOver documentation [here](https://genome.sph.umich.edu/wiki/LiftOver/). 
 
-3.	The genotype data must be converted to **PLINK format** if it isn’t already. However, if the file is very large, consider only converting a subset of it: simply convert the variants needed for the PRS. bcftools’s [view method](http://samtools.github.io/bcftools/bcftools.html#view) offers an easy way to subset large vcf files. 
+3. The target data’s genetic ancestry should match that of the population your PRS model was trained on. PRS lack transferability between populations.
+
+4.	The genotype data must be converted to **PLINK format** if it isn’t already. However, if the file is very large, consider only converting a subset of it: simply convert the variants needed for the PRS. bcftools’s [view method](http://samtools.github.io/bcftools/bcftools.html#view) offers an easy way to subset large vcf files. 
 
 ## Compute Scores
 1.	Run PLINK’s `--score` command for [allelic scoring](https://www.cog-genomics.org/plink/1.9/score)
