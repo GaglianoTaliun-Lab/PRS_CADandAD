@@ -3,8 +3,7 @@ A polygenic risk score (PRS) estimates the individual-level genetic risk for a t
 
 ## Base Data and Target Data
 1.	Download the PRS for your phenotype of interest from the PGS Catalog: 
-[PRS for CAD](https://www.pgscatalog.org/score/PGS000018/)
-[PRS for LOAD](https://www.pgscatalog.org/score/PGS000334/)
+[PRS for CAD](https://www.pgscatalog.org/score/PGS000018/) / [PRS for LOAD](https://www.pgscatalog.org/score/PGS000334/)
 Your base data should contain the PRS variants as well as their effect alleles and effect sizes. If this information is lacking, collect it from a recent GWAS study and append to the PRS variants. GWAS summary statistics are available for download from the [GWAS Catalog](https://www.ebi.ac.uk/gwas/home).
  
 2.	**Genomic builds** for the base and target data must match. [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver/) easily converts your data’s build if needed. It is possible that a couple variants cannot be lifted over and are dropped during conversion. Read LiftOver documentation [here](https://genome.sph.umich.edu/wiki/LiftOver/). 
