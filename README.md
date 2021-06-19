@@ -19,11 +19,11 @@ plink
 - - score <base data> 1 6 9 header center         
 - - out <output>
 ```
-`1` = column containing the variant names (1st column in this example)
-`6` = column containing the effect allele (6th here)
-`9` = column containing the effect allele weight (9th here)
-`header` informs PLINK that your base data contains a header
-`center` informs PLINK to shift all scores to mean zero
+- `1` = column containing the variant names (1st column in this example)
+- `6` = column containing the effect allele (6th here)
+- `9` = column containing the effect allele weight (9th here)
+- `header` informs PLINK that your base data contains a header
+- `center` informs PLINK to shift all scores to mean zero
 
 2.	The results will be written out to a `.profile` file which will contain each individual’s personal polygenic risk score. 
 
