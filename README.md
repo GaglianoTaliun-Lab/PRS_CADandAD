@@ -61,6 +61,10 @@ hist(CAD_dat$SCORE,
      freq=FALSE
 )
 ```
+### PRS for Coronary Artery Disease in the MHI Biobank
+![apoe](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Histogram-CAD-PRS.PNG)
+
+
 2.	Boxplots
 Example: simple R script to observe the CAD PRS results as boxplots. Complete [CAD and AD boxplot script](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS-Boxplots.R)
 ```
@@ -69,6 +73,8 @@ Example: simple R script to observe the CAD PRS results as boxplots. Complete [C
 # Simple boxplot for CAD PRS
 ggplot(CAD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) + geom_boxplot()
 ```
+
+
 3.	Boxplots with highlighted points 
 ggplot allows you to highlight certain points on the boxplots. For example, highlight the scores of individuals carrying the APOE e3/e4 alleles, or e4/e4. [Complete example script here](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS_Boxplots_APOE.R)
 ```
@@ -86,4 +92,5 @@ ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) +
   geom_boxplot() +
   geom_point(data=e4_prs, aes(x=PHENO, y=SCORE), color="red", size=1)
 ```
-![apoe](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png)
+### PRS for CAD in individuals in the MHI Biobank, red scores represent samples carrying APOE e4/e4 alleles
+![apoe.boxplots](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png)
