@@ -51,12 +51,4 @@ hist(CAD_dat$SCORE,
      freq=FALSE
 )
 
-
-# Simple boxplots for AD and CAD results
-
-ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) + geom_boxplot()
-
-ggplot(CAD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) + geom_boxplot()
-
-
 dev.off()
