@@ -62,7 +62,7 @@ hist(CAD_dat$SCORE,
 )
 ```
 ### PRS for Coronary Artery Disease in the MHI Biobank
-![apoe](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Histogram-CAD-PRS.PNG)
+![apoe](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Histogram-CAD-PRS.PNG| width=100)
 
 
 2.	Boxplots
@@ -93,4 +93,4 @@ ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) +
   geom_point(data=e4_prs, aes(x=PHENO, y=SCORE), color="red", size=1)
 ```
 ### PRS for CAD in individuals in the MHI Biobank, red scores represent samples carrying APOE e4/e4 alleles
-![apoe.boxplots](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png)
+![apoe.boxplots](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png| width=100)
