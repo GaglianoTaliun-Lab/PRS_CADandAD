@@ -86,4 +86,4 @@ ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) +
   geom_boxplot() +
   geom_point(data=e4_prs, aes(x=PHENO, y=SCORE), color="red", size=1)
 ```
-
+![apoe](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png)
