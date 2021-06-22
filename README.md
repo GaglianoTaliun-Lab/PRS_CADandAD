@@ -62,7 +62,7 @@ hist(CAD_dat$SCORE,
 )
 ```
 ### PRS for Coronary Artery Disease in the MHI Biobank
-<img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Histogram-CAD-PRS.PNG" width="500" height="400">
+<img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Histogram-CAD-PRS.PNG" width="400" height="400">
 
 2.	Boxplots
 Example: simple R script to observe the CAD PRS results as boxplots. Complete [CAD and AD boxplot script](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS-Boxplots.R)
@@ -92,4 +92,4 @@ ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) +
   geom_point(data=e4_prs, aes(x=PHENO, y=SCORE), color="red", size=1)
 ```
 ### PRS for CAD in individuals in the MHI Biobank, red scores represent samples carrying APOE e4/e4 alleles
-<img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png" width="500" height="400">
+<img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png" width="500" height="300">
