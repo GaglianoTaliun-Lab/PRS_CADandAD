@@ -29,8 +29,8 @@ plink
 2.	The results will be written out to a `.profile` file which will contain each individual’s personal polygenic risk score. 
 
 ## Visualize the data
-1.	Histogram
-Example: simple R script to visualize the coronary artery disease PRS results as a histogram. Complete [script for AD and CAD PRS histograms](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS-Histogram.R)
+#### 1.	Histograms
+Example: simple R script to visualize the coronary artery disease PRS results as a histogram. Complete [script for AD and CAD PRS histograms here.](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS-Histogram.R)
 ```
 # Read in results for CAD risk scores
 CAD_prs <- read.table("CAD_PRS.profile", as.is=T, h=T)
@@ -64,8 +64,8 @@ hist(CAD_dat$SCORE,
 ##### Output: PRS for Coronary Artery Disease in the MHI Biobank
 <img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Histogram-CAD-PRS.PNG" width="400" height="400">
 
-2.	Boxplots
-Example: simple R script to observe the CAD PRS results as boxplots. Complete [CAD and AD boxplot script](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS-Boxplots.R)
+#### 2.	Boxplots
+Example: simple R script to observe the CAD PRS results as boxplots. See complete [CAD and AD boxplot script.](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS-Boxplots.R)
 ```
 # Using previous CAD_data which contains the CAD scores for all cases and controls
 
@@ -74,8 +74,8 @@ ggplot(CAD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) + geom_boxplot()
 ```
 
 
-3.	Boxplots with highlighted points 
-ggplot allows you to highlight certain points on the boxplots. For example, highlight the scores of individuals carrying the APOE e3/e4 alleles, or e4/e4. [Complete example script here](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS_Boxplots_APOE.R)
+#### 3.	Boxplots with highlighted points 
+ggplot allows you to highlight certain points on the boxplots. For example, highlight the scores of individuals carrying the APOE e3/e4 alleles, or e4/e4. See full [example script here](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS_Boxplots_APOE.R)
 ```
 # Example: read in file containing individuals who carry APOE e4/e4
 e4_e4 <- read.table("e4-e4.txt", as.is = T, h=T)
