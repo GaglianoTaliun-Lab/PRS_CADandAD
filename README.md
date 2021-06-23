@@ -77,7 +77,10 @@ ggplot(CAD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) + geom_boxplot()
 #### 3.	Boxplots with highlighted points 
 ggplot allows you to highlight certain points on the boxplots. For example, highlight the scores of individuals carrying the APOE e3/e4 alleles, or e4/e4. See full [example script here](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS_Boxplots_APOE.R)
 ```
-# Example: read in file containing individuals who carry APOE e4/e4
+# Read in results for AD risk scores
+AD_prs <- read.table("AD_PRS.profile", as.is=T, h=T)
+
+# Read in file containing individuals who carry APOE e4/e4
 e4_e4 <- read.table("e4-e4.txt", as.is = T, h=T)
 
 # Categorize these individuals as cases or controls
@@ -91,5 +94,5 @@ ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) +
   geom_boxplot() +
   geom_point(data=e4_prs, aes(x=PHENO, y=SCORE), color="red", size=1)
 ```
-##### Output: PRS for CAD in individuals in the MHI Biobank, red scores represent samples carrying APOE e4/e4 alleles
+##### Output: PRS for AD in individuals in the MHI Biobank, red scores represent samples carrying APOE e4/e4 alleles
 <img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png" width="500" height="300">
