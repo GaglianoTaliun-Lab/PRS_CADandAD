@@ -98,5 +98,5 @@ ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) +
   geom_point(data=e2_prs, aes(x=PHENO.y, y=SCORE), color="blue", size=1) +
   geom_point(data=e4_prs, aes(x=PHENO.y, y=SCORE), color="red", size=1, alpha=0.2)
 ```
-##### Output: PRS for AD in individuals in the MHI Biobank, red scores represent samples carrying APOE e4/e4 alleles
-<img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png" width="500" height="300">
+##### Output: PRS for AD in individuals in the MHI Biobank, red scores represent samples carrying at least one APOE e4 allele and blue scores belong to individuals carrying at least one APOE e2 allele.
+<img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/AD%20PRS%20e2%20vs%20e4.png" width="500" height="300">
