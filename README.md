@@ -75,24 +75,28 @@ ggplot(CAD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) + geom_boxplot()
 
 
 #### 3.	Boxplots with highlighted points 
-ggplot allows you to highlight certain points on the boxplots. For example, highlight the scores of individuals carrying the APOE e3/e4 alleles, or e4/e4. See full [example script here](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS_Boxplots_APOE.R)
+ggplot allows you to highlight certain points on the boxplots. For example, highlight the scores of individuals carrying at least one APOE e4 allele, or at least one APOE e2 allele. See example [example script here](https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/PRS_Boxplots_APOE.R)
 ```
 # Read in results for AD risk scores
 AD_prs <- read.table("AD_PRS.profile", as.is=T, h=T)
 
-# Read in file containing individuals who carry APOE e4/e4
-e4_e4 <- read.table("e4-e4.txt", as.is = T, h=T)
+# Read in file containing individuals who carry APOE e4 and those carrying the e2 form
+ e4_group <- read.table("e4-group.txt", as.is = T, h=T)
+ e2_group <- read.table("e2-group.txt", as.is = T, h=T)
 
-# Categorize these individuals as cases or controls
-e4_cases <- merge(pop, e4_e4, by.x="IID", by.y="IID")
+# Assign "case" or "control" labels to individuals contained in the pop dataframe
+e4_cases <- merge(pop, e4_group, by.x="IID", by.y="IID")
+e2_cases <- merge(pop, e2_group, by.x="IID", by.y="IID")
 
 # Merge with prs file to obtain their individual risk scores
 e4_prs <-merge(AD_prs, e4_cases, by.x="IID", by.y="IID")
+e2_prs <-merge(AD_prs, e2_cases, by.x="IID", by.y="IID")
 
-# Very simple boxplots with highlighted scores of individuals carrying APOE e4/e4
+# Very simple boxplots with highlighted scores of individuals carrying APOE e4 or e2
 ggplot(AD_dat,aes(x=PHENO.y, y=SCORE, group=PHENO.y)) +
   geom_boxplot() +
-  geom_point(data=e4_prs, aes(x=PHENO, y=SCORE), color="red", size=1)
+  geom_point(data=e2_prs, aes(x=PHENO.y, y=SCORE), color="blue", size=1) +
+  geom_point(data=e4_prs, aes(x=PHENO.y, y=SCORE), color="red", size=1, alpha=0.2)
 ```
 ##### Output: PRS for AD in individuals in the MHI Biobank, red scores represent samples carrying APOE e4/e4 alleles
 <img src="https://github.com/GaglianoTaliun-Lab/PRS_CADandAD/blob/main/Boxplot_APOE_e4-e4.png" width="500" height="300">
